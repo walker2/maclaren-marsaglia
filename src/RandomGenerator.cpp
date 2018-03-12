@@ -1,7 +1,3 @@
-//
-// Created by andrew on 06.03.18.
-//
-
 #include "../headers/RandomGenerator.h"
 
 void RandomGenerator::runTests(int number)
@@ -102,20 +98,32 @@ void RandomGenerator::buildHistogram()
 
 void RandomGenerator::printCorrelation()
 {
-    for (int i = 1; i < 8; i++)
+    std::vector<int> ss = {2, 5, 10};
+
+    for (auto s : ss)
     {
-        std::cout << "s = " << i << " => R = " << getR(i) << std::endl;
+        std::cout << "s = " << s << std::endl;
+        for (int i = 100; i <= 1000; i += 100)
+        {
+            std::vector<double> newVec;
+            for (int j = 0; j < i; j++)
+            {
+                newVec.push_back(next());
+            }
+            std::cout << "i = " << i << " R = " << getR(newVec, s) << std::endl;
+        }
+        std::cout << std::endl;
     }
 }
 
-double RandomGenerator::getR(int s)
+double RandomGenerator::getR(std::vector<double> vec, int s)
 {
     float R, sum = 0;
-    for (auto i = 0; i < numVec.size() - s; i++)
+    for (auto i = 0; i < vec.size() - s; i++)
     {
-        sum += numVec[i] * numVec[i + s];
+        sum += vec[i] * vec[i + s];
     }
-    float pre = (float) 12 / (numVec.size() - s);
+    float pre = (float) 12 / (vec.size() - s);
     R = (pre * sum) - 3;
     return R;
 }

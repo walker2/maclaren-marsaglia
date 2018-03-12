@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/mclaren_marsaglia.dir/main.cpp.o CMakeFiles/mclaren_marsaglia.dir/src/MacLarenMarsagliaGenerator.cpp.o CMakeFiles/mclaren_marsaglia.dir/src/RandomGenerator.cpp.o CMakeFiles/mclaren_marsaglia.dir/src/StandartRandomGenerator.cpp.o CMakeFiles/mclaren_marsaglia.dir/src/MultiplicativeCongruentialGenerator.cpp.o  -o mclaren_marsaglia 

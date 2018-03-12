@@ -39,7 +39,7 @@ private:
 
     void printCorrelation();
 
-    double getR(int s);
+    double getR(std::vector<double> vec, int s);
 
 };
 
